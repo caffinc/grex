@@ -1,0 +1,4 @@
+# Test
+language: java
+script:
+ - sh -c 'cd grex && mvn clean test'

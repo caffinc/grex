@@ -11,6 +11,8 @@ import java.net.URL;
  * @author Sriram
  */
 public class IPUtil {
+    private static final String IP_PROVIDER = "https://api.ipify.org/";
+
     /**
      * Returns the public IP if one isn't specified in the <i>machine.ip</i> System property
      *
@@ -22,7 +24,7 @@ public class IPUtil {
             return System.getProperty("machine.ip");
         }
         try (BufferedReader br = new BufferedReader(
-                new InputStreamReader(new URL("http://caffinc.com/myip/").openConnection().getInputStream()))) {
+                new InputStreamReader(new URL(IP_PROVIDER).openConnection().getInputStream()))) {
             String ip;
             if ((ip = br.readLine()) != null) {
                 return ip;
