@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grex: Simple Distributed CPU Load Generator</title>
+    <link rel="stylesheet" type="text/css" href="ui.css">
+</head>
+<body style="font: normal 1em Verdana, Arial, sans-serif;color: white">
+<div id="content">
+    <div style="width:90%;margin:auto;"><h1
+            style="text-align:left;font: bold 3em Verdana, Arial, sans-serif;padding:0px;margin:0px">Grex</h1></div>
+    <fieldset style="width:90%;margin:auto;border: 3px solid #AD5555;">
+        <legend>Nodes</legend>
+        <div id="placeholderNode" style="display:none"><p style="color: #73AD21;height:50px;vertical-align:top;padding:0px;margin:0px">There was a problem fetching nodes...</p></div>
+        <div id="nodes" style="text-align:center;">
+        </div>
+    </fieldset>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="grex.js"></script>
+<script>
+    $(document).ready(function() {
+        function refreshNodes() {
+            loadNodes();
+            setTimeout(refreshNodes, 1000);
+        }
+        refreshNodes();
+    });
+</script>
+</body>
+</html>

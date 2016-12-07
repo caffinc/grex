@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.caffinc.grex</groupId>
+    <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>core</module>
+        <module>app</module>
+        <module>common</module>
+    </modules>
+
+    <properties>
+        <jetty-version>9.2.11.v20150529</jetty-version>
+        <javax-servlet-version>3.1.0</javax-servlet-version>
+        <swagger-version>1.5.3</swagger-version>
+        <jersey2-version>2.18</jersey2-version>
+        <jackson-version>2.4.2</jackson-version>
+        <gson-version>2.2.4</gson-version>
+        <commons-codec-version>1.10</commons-codec-version>
+        <apache-commons-version>3.4</apache-commons-version>
+        <okhttp-version>2.0.0</okhttp-version>
+        <junit-version>4.12</junit-version>
+        <jcommander-version>1.30</jcommander-version>
+        <slf4j-version>1.7.12</slf4j-version>
+        <retrofit-version>1.9.0</retrofit-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.beust</groupId>
+            <artifactId>jcommander</artifactId>
+            <version>${jcommander-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
